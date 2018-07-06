@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ak.dctm</groupId>
+    <artifactId>webtop</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archiveClasses>true</archiveClasses>
+                    <overlays>
+                        <overlay>
+                            <skip>false</skip>
+                            <groupId>documentum</groupId>
+                            <artifactId>webtop</artifactId>
+                            <excludes>
+                                <excludes>**/dfc.properties</excludes>
+                                <excludes>**/web.xml</excludes>
+                                <excludes>**/ucf.installer.config.xml</excludes>
+                                <excludes>custom/app.xml</excludes>
+                            </excludes>
+                        </overlay>
+                    </overlays>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+<dependencies>
+    <dependency>
+        <groupId>documentum</groupId>
+        <artifactId>webtop</artifactId>
+        <version>6.7</version>
+        <type>war</type>
+        <scope>system</scope>
+        <systemPath>${basedir}/ext/webtop.war</systemPath>
+    </dependency>
+</dependencies>
+</project>
