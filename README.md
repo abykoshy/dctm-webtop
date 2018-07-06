@@ -1,4 +1,4 @@
-# Packaging Documentum client wars like Webtop with custom configuration and code
+# Packaging Documentum client war like Webtop with custom configuration and code
 There are many ways of packaging Webtop/WDK Customizations into your application. The most simple would be to include the out-of-the-box Webtop/WDK war contents into your project and then package it like a regular war. The disadvantages in this approach are
 
 - Creation of branches/tags in the version control system will consume a lot of space as the Webtop/WDK war is ~200 MB and a constant cleanup would be required.
